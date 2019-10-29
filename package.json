@@ -1,0 +1,20 @@
+{
+	"name": "serverless-boilerplate",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "sls offline start --stage=dev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://stefanolaru@bitbucket.org/stefanolaru/serverless-boilerplate.git"
+	},
+	"author": "Stefan Olaru",
+	"license": "ISC",
+	"homepage": "https://bitbucket.org/stefanolaru/serverless-boilerplate#readme",
+	"devDependencies": {
+		"aws-sdk": "^2.373.0",
+		"serverless-offline": "^3.31.3"
+	}
+}

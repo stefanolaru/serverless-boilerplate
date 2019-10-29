@@ -1,0 +1,28 @@
+service: slsboilerplate
+
+provider:
+    name: aws
+    stage: ${opt:stage, 'dev'}
+    endpointType: REGIONAL
+    runtime: nodejs10.x
+    memorySize: 128
+    timeout: 5
+    profile: slsboilerplate
+    environment:
+        AWS_KEY: ${file(./config.${self:provider.stage}.json):AWS_KEY}
+        AWS_SECRET: ${file(./config.${self:provider.stage}.json):AWS_SECRET}
+
+functions:
+    index:
+        handler: src/index.handler
+        events:
+            - http:
+                  path: /
+                  method: GET
+
+plugins:
+    - serverless-offline
+
+custom:
+    serverless-offline:
+        port: 4000
